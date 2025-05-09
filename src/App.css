@@ -1,0 +1,349 @@
+
+
+/* task form, item, and dashboard need styled */
+
+
+
+/* Register page */
+
+.RegisterForm-Container {
+  padding-top: 10px;
+
+}
+
+#username, #email, #password {
+  display: block;
+  width: 100%;
+  margin: 0.5rem 0;
+  padding: 0.5rem;
+}
+
+/* Task Details */
+
+.task-details-page {
+  padding: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+
+.add-task-button {
+  width: 25%;
+  padding: 0.5rem;
+  background-color: #F0A202;
+  border: 1px solid #0F8B8D;
+  color: #EDE9EC;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: 4px;
+  display: block;
+
+}
+
+.add-task-button:hover {
+  background-color: #0F8B8D;
+  border: 1px solid #F0A202;
+  color: #EDE9EC;
+}
+
+.empty-message {
+  text-align: center;
+  font-size: 1.2em;
+  color: #EDE9EC;
+}
+
+.task-details-container {
+  /* From https://css.glass */
+  background: rgba(237, 233, 236, 0.04);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(1px);
+  -webkit-backdrop-filter: blur(4px);
+  border: 1px solid rgba(237, 233, 236, 0.26);
+  width: auto;
+  max-width: 500px;
+  padding: 20px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  position: relative;
+}
+
+.task-details-container h2 {
+  margin-top: 0;
+  color:#EDE9EC;
+  font-size: 1.5rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+  padding: 5px;
+}
+
+.task-details-container p {
+  color:#EDE9EC;
+  font-size: .9rem;
+  font-weight: lighter;
+  letter-spacing: 1.25px;
+  padding: 5px;
+}
+
+.complete-button {
+  width: 25%;
+  padding: 0.5rem;
+  background-color: #F0A202;
+  border: 1px solid #0F8B8D;
+  color: #EDE9EC;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: 4px;
+  display: block;
+  margin: 0.5rem 0;
+}
+
+.complete-button:hover {
+  background-color: #0F8B8D;
+  border: 1px solid #F0A202;
+  color: #EDE9EC;
+}
+
+.task-form-container {
+  position: relative;
+  border: 1px solid #ddd;
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  background-color: #3D3D3D;
+  backdrop-filter: blur( 0.5px );
+  -webkit-backdrop-filter: blur( 0.5px );
+  box-shadow: 1px 0 2px 1px #14141470;
+}
+
+.delete-task-button {
+  width: 25%;
+  padding: 0.5rem;
+  background-color: #F0A202;
+  border: 1px solid #0F8B8D;
+  color: #EDE9EC;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: 4px;
+  display: block;
+  margin: 0.5rem 0;
+}
+
+.delete-task-button:hover {
+  background-color: #0F8B8D;
+  border: 1px solid #F0A202;
+  color: #EDE9EC;
+}
+
+.task-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.form-group input,
+.form-group textarea {
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.form-group input[type="checkbox"] {
+  width: auto;
+}
+
+.submit-button {
+  background-color: #F0A202;
+  border: 1px solid #0F8B8D;
+  color: #EDE9EC;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.back-to-home-button {
+  text-align: center;
+  width: 25%;
+  padding: 0.5rem;
+  background-color: #F0A202;
+  border: 1px solid #0F8B8D;
+  color: #EDE9EC;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: 4px;
+  display: block;
+  margin: 0.5rem 0;
+}
+
+.back-to-home-button:hover {
+  background-color: #0F8B8D;
+  border: 1px solid #F0A202;
+  color: #EDE9EC;
+}
+
+/* dashboard */
+
+.dashboard-container {
+  background: rgba(237, 233, 236, 0.04);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(1px);
+  -webkit-backdrop-filter: blur(4px);
+  border: 1px solid rgba(237, 233, 236, 0.26);
+  padding: 20px;
+  max-width: 800px;
+  margin: 20px auto;
+  border-radius: 8px;
+  z-index: 2;
+}
+
+
+
+.no-tasks-message {
+  text-align: center;
+  font-size: 1.2em;
+  color: #EDE9EC;
+}
+
+.tasks-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Task Item */
+
+.task-item-container {
+  background: rgba(15, 139, 141, 0.04);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(1px);
+  -webkit-backdrop-filter: blur(4px);
+  border: 1px solid rgba(237, 233, 236, 0.26);  
+  padding: 15px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.task-item-container h3 {
+  margin: 0;
+  font-size: 1.2em;
+}
+
+.view-details-button {
+  background-color: #F0A202;
+  border: 1px solid #0F8B8D;
+  color: #EDE9EC;
+  padding: 8px 15px;
+  border-radius: 5px;
+  text-decoration: none;
+  text-align: center;
+  transition: background 0.3s;
+}
+
+.view-details-button:hover {
+  background-color: #0F8B8D;
+  border: 1px solid #F0A202;
+  color: #EDE9EC;
+}
+
+
+
+
+
+/*Task form */
+
+.task-form-container {
+  background: rgba(15, 139, 141, 0.04);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(4px);
+  border: 1px solid rgba(237, 233, 236, 0.26);
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.task-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  margin-bottom: 5px;
+  font-weight: bold;
+    color: #EDE9EC;
+}
+
+.form-group input,
+.form-group textarea {
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.form-group input[type="checkbox"] {
+  width: auto;
+}
+
+.form-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.submit-button,
+.cancel-button {
+  background-color: #F0A202;
+  border: 1px solid #0F8B8D;
+  color: #EDE9EC;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.submit-button:hover,
+.cancel-button:hover {
+  background-color: #0F8B8D;
+  border: 1px solid #F0A202;
+  color: #EDE9EC;
+}
+
+@media (max-width: 600px) {
+  *, html, body, #root, .background-video, .App {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 325px) {
+  *, html, body, #root, .background-video, .App {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
