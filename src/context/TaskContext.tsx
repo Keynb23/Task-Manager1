@@ -1,33 +1,57 @@
-import React, { createContext, useState, type ReactNode } from "react";
-import { type Task } from "../types/task";
+import { createContext, useContext, useState, type ReactNode } from "react";
 
-interface TaskContextProps {
-  tasks: Task[];
-  addTask: (task: Task) => void;
-  updateTask: (task: Task) => void;
-  deleteTask: (id: string) => void;
+export interface Task {
+    id: string;
+    title: string;
+    completed: boolean;
 }
 
-export const TaskContext = createContext<TaskContextProps | undefined>(undefined);
+interface TaskContextType {
+    tasks: Task[];
+    addTask: (task: Task) => void;
+    toggleTask: (id: string) => void;
+    deleteCheckedTasks: () => void;
+    selectAllTasks: () => void;
+}
 
-export const TaskProvider = ({ children }: { children: ReactNode }) => {
-  const [tasks, setTasks] = useState<Task[]>([]);
+const TaskContext = createContext<TaskContextType | undefined>(undefined);
 
-  const addTask = (task: Task) => {
-    // add task to state
-  };
+export function TaskProvider({ children }: { children: ReactNode }) {
+    const [tasks, setTasks] = useState<Task[]>([]);
 
-  const updateTask = (updatedTask: Task) => {
-    // update task in state
-  };
+    const addTask = (task: Task) => {
+        setTasks([...tasks, { ...task, completed: false }]);
+    };
 
-  const deleteTask = (id: string) => {
-    // remove task by id
-  };
+    const toggleTask = (id: string) => {
+        setTasks(
+            tasks.map(task =>
+                task.id === id ? { ...task, completed: !task.completed } : task
+            )
+        );
+    };
 
-  return (
-    <TaskContext.Provider value={{ tasks, addTask, updateTask, deleteTask }}>
-      {children}
-    </TaskContext.Provider>
-  );
-};
+    const deleteCheckedTasks = () => {
+        setTasks(tasks.filter(task => !task.completed));
+    };
+
+    const selectAllTasks = () => {
+        setTasks(tasks.map(task => ({ ...task, completed: true })));
+    };
+
+    return (
+        <TaskContext.Provider
+            value={{ tasks, addTask, toggleTask, deleteCheckedTasks, selectAllTasks }}
+        >
+            {children}
+        </TaskContext.Provider>
+    );
+}
+
+export function useTasks() {
+    const context = useContext(TaskContext);
+    if (!context) {
+        throw new Error("useTasks must be used within a TaskProvider");
+    }
+    return context;
+}

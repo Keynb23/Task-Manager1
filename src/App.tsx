@@ -1,35 +1,37 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Dashboard from "./pages/Dashboard";
-import TaskDetails from "./pages/TaskDetails";
-import Navbar from "./components/NavBar/Navbar";
-import { TaskProvider } from "./context/TaskContext";
-import "./App.css";
+import './App.css';
 
-function App() {
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { TaskProvider } from './context/TaskContext';
+import { TaskForm } from './components/TaskForm';
+import { TaskList } from './components/TaskList';
+import Navbar from './components/Navbar';
+import LoginPage from './LoginPage';
+
+export function App() {
   return (
-    <TaskProvider>
-      <Router>
-        <div className="App">
-          <video
-            autoPlay
-            loop
-            muted
-            playsInline
-            className="background-video"
-          >
-            <source src="/assets/fire.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
-
-          <Navbar />
-          <Routes>
-            <Route path="/" element={<Dashboard />} />
-            <Route path="/task/:id" element={<TaskDetails />} />
-          </Routes>
-        </div>
+    <div className="app-wrapper">
+      <div>
+        <p className="app-description">this div needs to be here or the app won't work. Idk man</p>
+      </div>
+      <Router future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
+        <TaskProvider>
+          <div className="content-box">
+            <Navbar />
+            <main className="main-content">
+              <Routes>
+                <Route path="/" element={<>
+                      <TaskForm />
+                      <TaskList />
+                      </>}
+                      />
+                <Route path="/add" element={<TaskForm />} />
+                <Route path="/tasks" element={<TaskList />} />
+                <Route path="/login" element={<LoginPage />} />
+              </Routes>
+            </main>
+          </div>
+        </TaskProvider>
       </Router>
-    </TaskProvider>
+    </div>
   );
 }
-
-export default App;
