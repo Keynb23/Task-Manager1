@@ -1,1 +1,1 @@
-I forgot to add the Auth0 application until after. I did import it and add it to my main.tsx, but not sure if it's working or not. I also downloaded a zip from auth0's website. Not sure what I'm supposed to do with that.
+
